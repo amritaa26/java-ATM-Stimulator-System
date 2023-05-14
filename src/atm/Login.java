@@ -8,7 +8,7 @@ import java.sql.*;
 public class Login extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
-	JLabel l1, l2, l3;
+	JLabel l1, l2, l3, image;
 	JTextField tf1;
 	JPasswordField pf1;
 	JButton b1, b2, b3;
@@ -20,10 +20,16 @@ public class Login extends JFrame implements ActionListener {
 		getContentPane().setBackground(Color.WHITE);
 		setLayout(null);
 		
-
+		ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/logo.jpg"));
+		Image i2 = i1.getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT);
+		ImageIcon i3 = new ImageIcon(i2);
+        image = new JLabel(i3);
+		image.setBounds(160, 30, 150, 60);
+		add(image);
+    
 		l1 = new JLabel("Welcome To ATM");
-		l1.setFont(new Font("Osward", Font.BOLD, 38));
-		l1.setBounds(230, 40, 400, 40);
+		l1.setFont(new Font("Osward", Font.BOLD, 34));
+		l1.setBounds(280, 40, 300, 40);
 		add(l1);
 
 		l2 = new JLabel("Card Number:");
